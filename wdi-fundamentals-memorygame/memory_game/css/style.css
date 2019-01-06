@@ -66,3 +66,17 @@ footer	{
 	height: 0;
 	font-size: 0;
 }
+#counter	{
+	font-family: raleway;
+	padding-top: 20px;
+}
+button	{
+	font-family: raleway;
+	margin-top: 20px;
+	width: 70px;
+	height: 40px;
+	border-radius: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	border: solid grey;
+}

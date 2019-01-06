@@ -31,12 +31,16 @@ var cards = [
 ];
 var cardsInPlay = [];
 
+var wins = 0;
+
 var checkForMatch = function()	{
 	if (cardsInPlay.length > 2)	{
 		reset()};
 	if (cardsInPlay.length > 1)	{
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			alert("You found a match!");
+			wins += 1;
+			updateCounter();
 			// console.log("You found a match!");
 		} else {
 			// console.log("Sorry, try again.");
@@ -44,6 +48,11 @@ var checkForMatch = function()	{
 		}
 	}
 	
+}
+
+var updateCounter = function()	{
+	var stringEnd = (wins === 1) ? "time" : "times";
+	document.getElementById('counter').innerHTML = "You have won " + wins + " " + stringEnd;
 }
 
 var flipCard = function()	{
@@ -81,6 +90,7 @@ var createBoard = function()	{
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);
 	};
+	updateCounter();
 };
 
 createBoard();
@@ -96,6 +106,8 @@ var reset = function() {
 	}
 	createBoard();
 }
+
+
 
 
 
